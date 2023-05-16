@@ -46,6 +46,30 @@
                 <td><code>number</code></td>
                 <td>The duration of the animation in beats.</td>
             </tr>
+            <!-- attenuation -->
+            <tr>
+                <td><code><a href="../properties/animation/attenuation.html">attenuation</a></code></td>
+                <td><code><a href="../types/vec1anim.html">vec1anim</a></code></td>
+                <td>The fog attenuation animation. This is only for V2, if you want to control the fog in V3, please use <code><a href="./animateComponent.html">AnimateComponent</a></code> instead of an <code>AnimateTrack</code>.</td>
+            </tr>
+            <!-- height -->
+            <tr>
+                <td><code><a href="../properties/animation/height.html">height</a></code></td>
+                <td><code><a href="../types/vec1anim.html">vec1anim</a></code></td>
+                <td>The fog height animation of the track. This is only for V2, if you want to control the fog height in V3, please use <code><a href="./animateComponent.html">AnimateComponent</a></code> instead of an <code>AnimateTrack</code>.</td>
+            </tr>
+            <!-- offset -->
+            <tr>
+                <td><code><a href="../properties/animation/offset.html">offset</a></code></td>
+                <td><code><a href="../types/vec1anim.html">vec1anim</a></code></td>
+                <td>The fog offset animation of the track. This is only for V2, if you want to control the fog offset in V3, please use <code><a href="./animateComponent.html">AnimateComponent</a></code> instead of an <code>AnimateTrack</code>.</td>
+            </tr>
+            <!-- startY -->
+            <tr>
+                <td><code><a href="../properties/animation/startY.html">startY</a></code></td>
+                <td><code><a href="../types/vec1anim.html">vec1anim</a></code></td>
+                <td>The fog startY animation of the track. This is only for V2, if you want to control the fog in V3, please use <code><a href="./animateComponent.html">AnimateComponent</a></code> instead of an <code>AnimateTrack</code>.</td>
+            </tr>
             <!-- color -->
             <tr>
                 <td><code><a href="../properties/animation/color.html">color</a></code></td>
@@ -106,8 +130,19 @@
                 <td><code><a href="../types/vec3anim.html">vec3anim</a></code></td>
                 <td>The scale offset animation of the track. Default size is xyz = 1.</td>
             </tr>
+            <!-- interactable -->
+            <tr>
+                <td><code><a href="../properties/animation/interactable.html">interactable</a></code></td>
+                <td><code><a href="../types/vec1anim.html">vec1anim</a></code></td>
+                <td>The interactable animation of the track. 1 is interactable, 0 is uninteractable, there is no in between or anything outside that range.</td>
+            </tr>
+            <!-- time -->
+            <tr>
+                <td><code><a href="../properties/animation/time.html">time</a></code></td>
+                <td><code><a href="../types/vec1anim.html">vec1anim</a></code></td>
+                <td>The time animation of the track. This is very complex and highly advised to avoid unless you know what you're doing and absolutely need it.</td>
+            </tr>
         </table>
     </div>
-
 </body>
 </html>
