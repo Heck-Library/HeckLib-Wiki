@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/pop.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/typescript.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+    <div class="top-bar">
+        <h1><a href="../index.html">HeckLib Wiki</a></h1>
+    </div>
+    <div class="text-container-div">
+        <h2 style="text-align: center;">AnimateTrack</h2>
+        <p>This page contains all the information needed to know about the AnimateTrack event in HeckLib.</p>
+        <h3>Usage</h3>
+        <p>The following example shows how to create a basic pulse scale animation for all objects on track <code>"foo"</code>. The animation would occur on beat number 4 in this case.</p>
+        <pre><code class="language-typescript code-block" style="padding-left: 4em;">new AnimateTrack(4, {
+    track: "foo",
+    duration: 1,
+    scale: [
+        [2, 2, 2, 0],
+        [1, 1, 1, 1]
+    ]
+}).push();</code></pre>
+        <h3>Parameters</h3>
+        <p>All of the parameters you can use in an <code>AnimateTrack</code> event are in the table below with descriptions. If you wish to learn more about these, they are fully documented in the JSDoc which can be seen in the editor through IntelliSense. (IntelliSense is Visual Studio Code's autocompletition dropdown)</p>
+        <table class="param-table">
+            <tr>
+                <th>Parameter</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+            <!-- track -->
+            <tr>
+                <td><code>track</code></td>
+                <td><code>string | string[]</code></td>
+                <td>The track to be animated by the event. (This value is the only value that is necessary for the event to be generated.)</td>
+            </tr>
+            <!-- duration -->
+            <tr>
+                <td><code>duration</code></td>
+                <td><code>number</code></td>
+                <td>The duration of the animation in beats.</td>
+            </tr>
+            <!-- color -->
+            <tr>
+                <td><code><a href="../properties/animation/color.html">color</a></code></td>
+                <td><code><a href="../types/vec4anim.html">vec4anim</a></code></td>
+                <td>The color animation of the track.</td>
+            </tr>
+            <!-- dissolve -->
+            <tr>
+                <td><code><a href="../properties/animation/dissolve.html">dissolve</a></code></td>
+                <td><code><a href="../types/vec1anim.html">vec1anim</a></code></td>
+                <td>The dissolve animation of the track. Please note that this does <strong>not</strong> dissolve the arrows of notes, you have to dissolve them separately using <code><a href="../properties/animation/dissolveArrow.html">dissolveArrow</a></code>.</td>
+            </tr>
+            <!-- dissolveArrow -->
+            <tr>
+                <td><code><a href="../properties/animation/dissolveArrow.html">dissolveArrow</a></code></td>
+                <td><code><a href="../types/vec1anim.html">vec1anim</a></code></td>
+                <td>The dissolve arrow animation of the track. Since this dissolves only arrows, it works only with notes, nothing else.</td>
+            </tr>
+            <!-- localPosition -->
+            <tr>
+                <td><code><a href="../properties/animation/localPosition.html">localPosition</a></code></td>
+                <td><code><a href="../types/vec3anim.html">vec3anim</a></code></td>
+                <td>The local position offset animation of the track. This only works on environment objects and honestly, I don't know the difference between this and regular position...</td>
+            </tr>
+            <!-- position -->
+            <tr>
+                <td><code><a href="../properties/animation/position.html">position</a></code></td>
+                <td><code><a href="../types/vec3anim.html">vec3anim</a></code></td>
+                <td>The position offset animation of the track. Since V3, this has been only for environment objects as an <strong>absolute</strong> position. If you wish to animate notes' or walls' position offset in V3, please use <code><a href="../properties/animation/offsetPosition.html">offsetPosition</a></code> instead. Default position is xyz = 0.</td>
+            </tr>
+            <!-- offsetPosition -->
+            <tr>
+                <td><code><a href="../properties/animation/offsetPosition.html">offsetPosition</a></code></td>
+                <td><code><a href="../types/vec3anim.html">vec3anim</a></code></td>
+                <td>The position offset animation of the track. This is only for V3 and works only for walls and notes. This replaces the V2's <code><a href="../properties/animation/position.html">position</a></code> for map objects. Default position is xyz = 0.</td>
+            </tr>
+            <!-- localRotation -->
+            <tr>
+                <td><code><a href="../properties/animation/localRotation.html">localRotation</a></code></td>
+                <td><code><a href="../types/vec3anim.html">vec3anim</a></code></td>
+                <td>The local rotation offset animation of the track. This rotates the object around its own rotation anchor which is the bottom left corner for walls and the center of the object for notes. Default rotation is xyz = 0.</td>
+            </tr>
+            <!-- rotation -->
+            <tr>
+                <td><code><a href="../properties/animation/rotation.html">rotation</a></code></td>
+                <td><code><a href="../types/vec3anim.html">vec3anim</a></code></td>
+                <td>The rotation offset animation of the track. Since V3, this has been only for environment objects as an absolute rotation value. If you wish to animate notes' or walls' position offset in V3, plase use <code><a href="../properties/animation/offsetWorldRotation.html">offsetWorldRotation</a></code> instead. Default rotation is xyz = 0.</td>
+            </tr>
+            <!-- offsetWorldRotation -->
+            <tr>
+                <td><code><a href="../properties/animation/offsetWorldRotation.html">offsetWorldRotation</a></code></td>
+                <td><code><a href="../types/vec3anim.html">vec3anim</a></code></td>
+                <td>The rotation offset animation of the track. This is only for V3 and works only for walls and notes. This replaces the V2's <code><a href="../properties/animation/rotation.html">rotation</a></code> for map objects. Default rotation is xyz = 0.</td>
+            </tr>
+            <!-- scale -->
+            <tr>
+                <td><code><a href="../properties/animation/scale.html">scale</a></code></td>
+                <td><code><a href="../types/vec3anim.html">vec3anim</a></code></td>
+                <td>The scale offset animation of the track. Default size is xyz = 1.</td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>
