@@ -7,6 +7,7 @@ body {
 }
 a {
     color: #fff;
+    text-decoration: none;
 }
 td, th {
     border: 1px solid #fff9;
@@ -19,6 +20,10 @@ tr:nth-child(even) {
     background-color: #0004;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 /* classes */
 
 .top-bar {
@@ -27,6 +32,7 @@ tr:nth-child(even) {
     margin: 0;
     padding: 10px;
     text-align: center;
+    text-decoration: none;
 }
 .text-container-div {
     margin: 0 auto;
@@ -50,4 +56,14 @@ tr:nth-child(even) {
     column-width: 4sem;
     border-radius: 10px;
     background-color: #0005;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
 }

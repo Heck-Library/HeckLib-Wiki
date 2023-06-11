@@ -10,21 +10,24 @@
 
 <body>
     <div class="top-bar">
-        <h1><a href="../index.html">HeckLib Wiki</a></h1>
+        <h1><a href="../index.html" style="border: none;">HeckLib Wiki</a></h1>
     </div>
     <div class="text-container-div">
         <h2 style="text-align: center;">AnimateTrack</h2>
         <p>This page contains all the information needed to know about the AnimateTrack event in HeckLib.</p>
         <h3>Usage</h3>
         <p>The following example shows how to create a basic pulse scale animation for all objects on track <code>"foo"</code>. The animation would occur on beat number 4 in this case.</p>
-        <pre><code class="language-typescript code-block" style="padding-left: 4em;">new AnimateTrack(4, {
+        <pre>
+            <code class="language-typescript code-block" style="padding-left: 4em;">
+new AnimateTrack(4, {
     track: "foo",
     duration: 1,
     scale: [
         [2, 2, 2, 0],
         [1, 1, 1, 1]
     ]
-}).push();</code></pre>
+}).push();
+        </code></pre>
         <h3>Parameters</h3>
         <p>All of the parameters you can use in an <code>AnimateTrack</code> event are in the table below with descriptions. If you wish to learn more about these, they are fully documented in the JSDoc which can be seen in the editor through IntelliSense. (IntelliSense is Visual Studio Code's autocompletition dropdown)</p>
         <table class="param-table">
